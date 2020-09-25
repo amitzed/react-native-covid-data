@@ -26,7 +26,8 @@ const ResultsList = ({ heading, results }) => {
 const styles = StyleSheet.create({
   headingStyle: {
     fontSize: 17,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 });
 

@@ -9,18 +9,6 @@ const SearchPage = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, errorMessage] = useResults();
 
-  // console.log(
-  //   results.map(res => (
-  //     res.NewConfirmed
-  //   ))
-  // );
-
-  // console.log(
-  //   results.filter(res => (
-  //     res.NewConfirmed > 200
-  //   ))
-  // );
-
   const filterByNewCases = (NewConfirmed) => {
     return results.filter(result => (
       result.NewConfirmed === NewConfirmed
@@ -34,10 +22,10 @@ const SearchPage = () => {
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
+
       {
         errorMessage ? <Text>{errorMessage}</Text> : null
       }
-      {/* <Text>Results Found: {results.length}</Text> */}
 
       <Text style={styles.casesTitleStyle}>Newest Cases Confirmed</Text>
       <DataList
