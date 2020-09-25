@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 
+import DataDetail from './DataDetail';
+
 const ResultsList = ({ heading, results }) => {
   return (
     <View>
@@ -11,7 +13,9 @@ const ResultsList = ({ heading, results }) => {
         keyExtractor={(result) => result.Slug}
         renderItem={( {item}) => {
           return(
-            <Text>{item.Country}</Text>
+            <DataDetail
+              result={ item }
+            />
           )
         }}
       />

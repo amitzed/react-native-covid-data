@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
-import ResultsList from '../components/ResultsList';
+import DataList from '../components/DataList';
 
 const SearchPage = () => {
   const [term, setTerm] = useState('');
@@ -40,19 +40,19 @@ const SearchPage = () => {
       {/* <Text>Results Found: {results.length}</Text> */}
 
       <Text style={styles.casesTitleStyle}>Newest Cases Confirmed</Text>
-      <ResultsList
+      <DataList
         results={results.filter(result => (
           result.NewConfirmed > 200
         ))}
         heading="Greater than 200"
       />
-      <ResultsList
+      <DataList
         results={results.filter(result => (
           result.NewConfirmed > 50 && result.NewConfirmed <= 200
         ))}
         heading="Greater than 50"
       />
-      <ResultsList
+      <DataList
         results={results.filter(result => (
           result.NewConfirmed <= 50
         ))}
