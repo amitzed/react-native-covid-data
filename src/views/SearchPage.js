@@ -5,7 +5,7 @@ import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 import DataList from '../components/DataList';
 
-const SearchPage = ({ navigation }) => {
+const SearchPage = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, errorMessage] = useResults();
 
@@ -34,21 +34,18 @@ const SearchPage = ({ navigation }) => {
             result.NewConfirmed > 200
           ))}
           heading="Greater than 200"
-          navigation={navigation}
         />
         <DataList
           results={results.filter(result => (
             result.NewConfirmed > 50 && result.NewConfirmed <= 200
           ))}
           heading="Greater than 50"
-          navigation={navigation}
         />
         <DataList
           results={results.filter(result => (
             result.NewConfirmed <= 50
           ))}
           heading="Less Than 50"
-          navigation={navigation}
         />
       </ScrollView>
     </>
