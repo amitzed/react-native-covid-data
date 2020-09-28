@@ -9,7 +9,7 @@ const navigator = createStackNavigator({
 {
   initialRouteName: 'Search',
   defaultNavigationOptions: {
-    title: 'Covid19 Worldwide Data'
+    title: 'Covid-19 Worldwide Data'
   }
 });
 

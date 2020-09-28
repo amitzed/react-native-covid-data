@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
@@ -16,7 +16,7 @@ const SearchPage = () => {
   }
 
   return (
-    <View>
+    <>
       <SearchBar
         term={term}
         onTermChange={setTerm}
@@ -28,25 +28,27 @@ const SearchPage = () => {
       }
 
       <Text style={styles.casesTitleStyle}>Newest Cases Confirmed</Text>
-      <DataList
-        results={results.filter(result => (
-          result.NewConfirmed > 200
-        ))}
-        heading="Greater than 200"
-      />
-      <DataList
-        results={results.filter(result => (
-          result.NewConfirmed > 50 && result.NewConfirmed <= 200
-        ))}
-        heading="Greater than 50"
-      />
-      <DataList
-        results={results.filter(result => (
-          result.NewConfirmed <= 50
-        ))}
-        heading="Less Than 50"
-      />
-    </View>
+      <ScrollView>
+        <DataList
+          results={results.filter(result => (
+            result.NewConfirmed > 200
+          ))}
+          heading="Greater than 200"
+        />
+        <DataList
+          results={results.filter(result => (
+            result.NewConfirmed > 50 && result.NewConfirmed <= 200
+          ))}
+          heading="Greater than 50"
+        />
+        <DataList
+          results={results.filter(result => (
+            result.NewConfirmed <= 50
+          ))}
+          heading="Less Than 50"
+        />
+      </ScrollView>
+    </>
   )
 };
 
