@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
 import DataDetail from './DataDetail';
 
-const ResultsList = ({ heading, results }) => {
+const ResultsList = ({ heading, results, navigation }) => {
   return (
     <View>
       <Text style={styles.headingStyle}>{heading}</Text>
@@ -13,10 +13,12 @@ const ResultsList = ({ heading, results }) => {
         data={results}
         keyExtractor={(result) => result.Slug}
         renderItem={( {item}) => {
-          return(
-            <DataDetail
-              result={ item }
-            />
+          return (
+            <TouchableOpacity onPress={() => navigation.navigate('DataShow')}>
+              <DataDetail
+                result={ item }
+              />
+            </TouchableOpacity>
           )
         }}
       />

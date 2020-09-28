@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const DataShow = () => {
+const DataShowPage = () => {
   return (
     <View>
       <Text>Data Show</Text>
@@ -11,4 +11,4 @@ const DataShow = () => {
 
 const styles = StyleSheet.create({});
 
-export default DataShow;
+export default DataShowPage;
