@@ -17,13 +17,6 @@ export default () => {
       });
 
       setResults(response.data.Countries);
-      // setResults(response.data.Global);
-      // setResults(response.data.Countries[1]);
-      // setResults(response.data.Countries[1].Country);
-      // setResults(response.data.Countries.map(count => {
-      //   count.Country
-      // }));
-      // console.log(response.data.Global); // Global Stats
     } catch(err) {
       setErrorMessage('Something Went Wrong...')
     }
