@@ -84,11 +84,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#262833'
   },
   headingStyle: {
-    fontSize: 45,
+    fontSize: 50,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#eaf6fb',
-    backgroundColor: '#fe9677',
+    // backgroundColor: '#fe9677',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'double',
+    textDecorationColor: '#fe9677',
     width: '80%',
     paddingVertical: 10
   },

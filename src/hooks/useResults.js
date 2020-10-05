@@ -4,6 +4,7 @@ import covidapi from '../api/covidapi';
 
 export default () => {
   const [results, setResults] = useState([]);
+  const [globalResults, setGlobalResults] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
 
   const searchApi = async (searchTerm) => {
@@ -17,6 +18,7 @@ export default () => {
       });
 
       setResults(response.data.Countries);
+      setGlobalResults(response.data.Global);
     } catch(err) {
       setErrorMessage('Something Went Wrong...')
     }
@@ -26,5 +28,5 @@ export default () => {
     searchApi('search')
   }, []);
 
-  return [searchApi, results, errorMessage];
+  return [searchApi, results, globalResults, errorMessage];
 };
