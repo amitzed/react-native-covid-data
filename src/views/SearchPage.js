@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { Foundation } from '@expo/vector-icons';
 
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
@@ -16,7 +17,7 @@ const SearchPage = () => {
   }
 
   return (
-    <>
+    <View style={styles.mainPageStyle}>
       <SearchBar
         term={term}
         onTermChange={setTerm}
@@ -27,38 +28,49 @@ const SearchPage = () => {
         errorMessage ? <Text>{errorMessage}</Text> : null
       }
 
+      <Foundation name="results-demographics" style={styles.mainIconStyle} />
       <Text style={styles.casesTitleStyle}>Newest Cases Confirmed</Text>
       <ScrollView>
         <DataList
           results={results.filter(result => (
             result.NewConfirmed > 200
           ))}
-          heading="Greater than 200"
+          heading="Over 200 Cases"
         />
         <DataList
           results={results.filter(result => (
             result.NewConfirmed > 50 && result.NewConfirmed <= 200
           ))}
-          heading="Greater than 50"
+          heading="Over 50 Cases"
         />
         <DataList
           results={results.filter(result => (
             result.NewConfirmed <= 50
           ))}
-          heading="Less Than 50"
+          heading="Less Than 50 Cases"
         />
       </ScrollView>
-    </>
+    </View>
   )
 };
 
 const styles = StyleSheet.create({
+  mainPageStyle: {
+    height: '100%',
+    backgroundColor: '#445571'
+  },
+  mainIconStyle: {
+    fontSize: 75,
+    textAlign: 'center',
+    color: '#4acfac'
+  },
   casesTitleStyle: {
-    fontSize: 18,
+    fontSize: 23,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 5,
-    marginBottom: 5
+    color: '#eaf6fb',
+    // marginVertical: 5,
+    paddingBottom: 5
   }
 });
 

@@ -45,7 +45,9 @@ const styles = StyleSheet.create({
   headingStyle: {
     fontSize: 17,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#fe9677',
+    paddingVertical: 5
   }
 });
 

@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   container: {
     height: 150,
     width: 190,
+    backgroundColor: '#262833',
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 10,
@@ -40,15 +41,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 17,
     padding: 7,
+    color: '#000',
     backgroundColor: '#fe9677'
   },
   dataTitleStyle: {
     fontWeight: '500',
     fontSize: 13,
+    color: '#4acfac',
     marginBottom: 8
   },
   dataDetailStyle: {
-    color: 'red'
+    color: '#d60000',
+    fontWeight: 'bold'
   },
   actionStyle: {
     fontSize: 10,
