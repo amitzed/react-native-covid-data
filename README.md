@@ -12,13 +12,17 @@
 ##    b) Open your phone camera and scan the QR COde and click yes when asked on your phone if you'd like to open in EXPO.
 
 
-<h4 align="center">Home Page View</h4>
+<h4 align="center">Views</h4>
 <p align="center">
   <img src="assets/images/homescreen.png" width="300" title="hover text">
   <img src="assets/images/homescreen-scroll.png" width="300" title="hover text">
   <img src="assets/images/data-show-page.png" width="300" title="hover text">
 </p>
 <br>  
+<h4 align="center">Home Page View</h4>
+<p align="center">
+  <img src="assets/images/homescreen.png" width="300" title="hover text">
+</p>
 <h4 align="center">Home Page Scroll View</h4>
 <p align="center">
   <img src="assets/images/homescreen-scroll.png" width="300" title="hover text">
