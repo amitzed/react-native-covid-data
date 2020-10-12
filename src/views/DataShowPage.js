@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
   dataDetailStyle: {
-    color: '#d60000'
+    color: 'gold'
   }
 });
 

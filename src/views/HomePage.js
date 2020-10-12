@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     marginBottom: 8
   },
   dataDetailStyle: {
-    color: '#d60000',
+    color: 'gold',
     fontWeight: 'bold'
   }
 });

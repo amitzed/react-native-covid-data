@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
     marginBottom: 8
   },
   dataDetailStyle: {
-    color: '#d60000',
+    color: 'gold',
     fontWeight: 'bold'
   },
   actionStyle: {
     fontSize: 10,
-    color: '#F64668'
+    color: 'gold'
   }
 });
 
