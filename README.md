@@ -9,7 +9,7 @@
 ## 4) On browser window that opens for EXPO click 'Run an iOS simulator' (or one of the other simulators) - if it does not work, on your computer with Simulator app in focus, choose from your computer dropdown: Hardware > Erase All Content & Settings, then repeat step 3 above.
 ## 5) If there's a preference to view on actual mobile device:
 ##    a) Install Expo from the App Store on your phone (free app).
-##    b) Open your phone camera and scan the QR COde and click yes when asked on your phone if you'd like to open in EXPO.
+##    b) Open your phone camera and scan the QR Code and click yes when asked on your phone if you'd like to open in EXPO.
 
 
 <h4 align="center">Views</h4>
