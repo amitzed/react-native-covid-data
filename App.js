@@ -1,25 +1,18 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import SearchPage from './src/views/SearchPage';
+import HomePage from './src/views/HomePage';
 import DataShowPage from './src/views/DataShowPage';
 
 const navigator = createStackNavigator({
-  Search: SearchPage,
+  Home: HomePage,
   DataShow: DataShowPage
 },
 {
-  initialRouteName: 'Search',
+  initialRouteName: 'Home',
   defaultNavigationOptions: {
     title: 'Covid-19 Worldwide Data'
   }
 });
 
 export default createAppContainer(navigator);
-
-
-// Hex Colors Theme (delete later):
-// #41436A
-// #984063
-// #F64668
-// #FE9677

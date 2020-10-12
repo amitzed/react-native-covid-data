@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Foundation } from '@expo/vector-icons';
 
-import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 import DataList from '../components/DataList';
 
-const SearchPage = () => {
+const HomePage = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, globalResults, errorMessage] = useResults();
 
@@ -18,43 +17,32 @@ const SearchPage = () => {
 
   return (
     <View style={styles.mainPageStyle}>
-      {/* <SearchBar
-        term={term}
-        onTermChange={setTerm}
-        onTermSubmit={() => searchApi(term)}
-      /> */}
-
       {
         errorMessage ? <Text>{errorMessage}</Text> : null
       }
-
+      <Foundation name="results-demographics" style={styles.mainIconStyle} />
       <View style={styles.globalStatsContainer}>
+
         <Text style={styles.casesTitleStyle}>Global Stats</Text>
 
-        <Text>
-          <Text style={styles.globalLeft}>
-            <Text>New Confirmed:&nbsp;</Text>
-            <Text>{globalResults.NewConfirmed}</Text>
-          </Text>
-          <Text style={styles.globalRight}>
-            <Text>New Deaths:&nbsp;</Text>
-            <Text>{globalResults.NewDeaths}</Text>
-          </Text>
+        <Text style={styles.dataTitleStyle}>
+          <Text>New Confirmed:&nbsp;</Text>
+          <Text style={styles.dataDetailStyle}>{globalResults.NewConfirmed}</Text>
         </Text>
-
-        <Text>
-          <Text style={styles.globalLeft}>
-            <Text>Total Confirmed:&nbsp;</Text>
-            <Text>{globalResults.TotalConfirmed}</Text>
-          </Text>
-          <Text style={styles.globalRight}>
-            <Text>Total Deaths:&nbsp;</Text>
-            <Text>{globalResults.TotalDeaths}</Text>
-          </Text>
+        <Text style={styles.dataTitleStyle}>
+          <Text>New Deaths:&nbsp;</Text>
+          <Text style={styles.dataDetailStyle}>{globalResults.NewDeaths}</Text>
+        </Text>
+        <Text style={styles.dataTitleStyle}>
+          <Text>Total Confirmed:&nbsp;</Text>
+          <Text style={styles.dataDetailStyle}>{globalResults.TotalConfirmed}</Text>
+        </Text>
+        <Text style={styles.dataTitleStyle}>
+          <Text>Total Deaths:&nbsp;</Text>
+          <Text style={styles.dataDetailStyle}>{globalResults.TotalDeaths}</Text>
         </Text>
       </View>
 
-      <Foundation name="results-demographics" style={styles.mainIconStyle} />
       <Text style={styles.casesTitleStyle}>Newest Cases Confirmed</Text>
       <ScrollView>
         <DataList
@@ -92,25 +80,16 @@ const styles = StyleSheet.create({
     color: '#4acfac'
   },
   globalStatsContainer: {
-    // height: 150,
-    // width: 190,
-    // backgroundColor: '#262833',
-    // borderColor: 'black',
-    // borderWidth: 1,
-    // borderRadius: 10,
-    // marginBottom: 15,
-    // marginRight: 7,
-    // padding: 10,
-    // display: 'flex',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // flex: 1
-  },
-  globalLeft: {
-    textAlign: 'left'
-  },
-  globalRight: {
-    textAlign: 'right'
+    width: '90%',
+    backgroundColor: '#262833',
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   casesTitleStyle: {
     fontSize: 23,
@@ -118,7 +97,21 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#eaf6fb',
     paddingBottom: 5
+  },
+  casesDataStyle: {
+    color: '#eaf6fb',
+    width: '100%'
+  },
+  dataTitleStyle: {
+    fontWeight: '500',
+    fontSize: 13,
+    color: '#4acfac',
+    marginBottom: 8
+  },
+  dataDetailStyle: {
+    color: '#d60000',
+    fontWeight: 'bold'
   }
 });
 
-export default SearchPage;
+export default HomePage;
